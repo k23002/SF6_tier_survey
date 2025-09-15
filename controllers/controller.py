@@ -9,6 +9,24 @@ class Controllers:
     def start_application(self):
         user_name = self.view.get_user_name()
 
+        if user_name == "tier":
+            while True:
+                character = self.view.get_character_name()
+                if character in self.characters:
+                    tier = self.model.get_all_tier()
+                    for char, point in tier[character].items():
+                        if point > 0:
+                            matchup = "有利"
+                        elif point < 0:
+                            matchup = "不利"
+                        else:
+                            matchup = "互角"
+                        print(char, point, matchup)
+                    break
+                else:
+                    self.view.show_character_error()
+            return
+
         while True:
             user_character = self.view.get_user_character(user_name)
             if user_character in self.characters:

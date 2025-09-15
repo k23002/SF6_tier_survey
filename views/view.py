@@ -14,6 +14,9 @@ class View:
     def show_answer_error(self):
         return print(f"robota: 不明な入力です。[有利/互角/不利]から選択してください。\n")
     
+    def get_character_name(self):
+        return input(f"robota: どのキャラクターのティア表を見ますか？\n")
+    
     def finish_application(self, name):
         return print(f"robota: {name}さん、ありがとうございました。良い1日を！さようなら。\n")
     

@@ -11,7 +11,7 @@ class Controllers:
 
         if user_name == "tier":
             while True:
-                character = self.view.get_character_name()
+                character = self.view.get_character_name(self.characters)
                 if character in self.characters:
                     tier = self.model.get_all_tier()
                     for char, point in tier[character].items():
@@ -28,7 +28,7 @@ class Controllers:
             return
 
         while True:
-            user_character = self.view.get_user_character(user_name)
+            user_character = self.view.get_user_character(user_name, self.characters)
             if user_character in self.characters:
                 break
             else:

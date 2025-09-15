@@ -1,9 +1,9 @@
 class View:
     def get_user_name(self):
-        return input("robota: 名前を教えてください。\n")
+        return input("robota: 名前を教えてください。\n(tier と入力するとティア表が確認できます。)\n")
     
-    def get_user_character(self, name):
-        return input(f"robota: {name}さん、あなたの使用キャラクターを教えてください。\n")
+    def get_user_character(self, name, characters):
+        return input(f"robota: {name}さん、あなたの使用キャラクターを教えてください。\n{characters}\n")
     
     def show_character_error(self):
         return print(f"robota: 不明な入力です。キャラクターリストから選択してください。\n")
@@ -14,8 +14,8 @@ class View:
     def show_answer_error(self):
         return print(f"robota: 不明な入力です。[有利/互角/不利]から選択してください。\n")
     
-    def get_character_name(self):
-        return input(f"robota: どのキャラクターのティア表を見ますか？\n")
+    def get_character_name(self, characters):
+        return input(f"robota: どのキャラクターのティア表を見ますか？\n{characters}\n")
     
     def finish_application(self, name):
         return print(f"robota: {name}さん、ありがとうございました。良い1日を！さようなら。\n")
